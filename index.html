@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charlotte Hird Fitness | Personal Trainer Bishop Auckland</title>
+<meta name="description" content="Personal trainer and online coach based at OneGym Bishop Auckland. 7 years helping women build strength, confidence and healthier lifestyles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky:#89C8DC;
+  --peach:#F2A58A;
+  --warm:#F5D4A0;
+  --pink:#EE5B8C;
+  --pink-card:#F06292;
+  --coral:#E8603C;
+  --coral-deep:#C84A28;
+  --cream:#FEF9F4;
+  --blush:#FADADD;
+  --ink:#1E1E1E;
+  --ink-mid:#4A4A4A;
+  --ink-soft:#7A7A7A;
+  --white:#FFFFFF;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+img{display:block;max-width:100%;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.9rem 5vw;
+  background:rgba(254,249,244,0.94);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+.nav-logo img{height:48px;width:auto;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.72rem;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink);transition:color .2s;
+}
+.nav-links a:hover{color:var(--coral);}
+.nav-cta{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.72rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.55rem 1.2rem;
+  background:var(--pink);color:white;
+  border-radius:999px;transition:opacity .2s;
+}
+.nav-cta:hover{opacity:0.88;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;transition:all .3s;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100svh;
+  background:linear-gradient(175deg,var(--sky) 0%,var(--peach) 52%,var(--warm) 100%);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:9rem 5vw 6rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 20%,rgba(255,255,255,0.22),transparent 60%);
+  pointer-events:none;
+}
+.hero-logo{
+  width:min(200px,52vw);margin-bottom:2.2rem;
+  animation:fadeUp .9s ease both;
+}
+.hero-eyebrow{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.72rem;font-weight:700;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(30,30,30,0.65);margin-bottom:0.9rem;
+  animation:fadeUp .9s ease .1s both;
+}
+.hero h1{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(3.2rem,13vw,6.5rem);
+  color:var(--ink);line-height:0.95;
+  animation:fadeUp .9s ease .2s both;
+}
+.hero-sub{
+  margin-top:1.3rem;
+  font-size:clamp(0.95rem,2.2vw,1.15rem);
+  color:rgba(30,30,30,0.78);
+  max-width:40ch;line-height:1.6;
+  animation:fadeUp .9s ease .3s both;
+}
+.hero-btns{
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;
+  margin-top:2.4rem;
+  animation:fadeUp .9s ease .4s both;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.9rem 1.9rem;border-radius:999px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.8rem;font-weight:700;letter-spacing:0.06em;
+  transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-pink{background:var(--pink);color:white;box-shadow:0 4px 20px rgba(238,91,140,0.35);}
+.btn-pink:hover{box-shadow:0 8px 28px rgba(238,91,140,0.45);}
+.btn-outline{background:rgba(255,255,255,0.45);border:2px solid rgba(30,30,30,0.4);color:var(--ink);}
+.btn-outline:hover{background:rgba(255,255,255,0.65);}
+.btn-coral{background:var(--coral);color:white;box-shadow:0 4px 20px rgba(232,96,60,0.3);}
+.btn-coral:hover{box-shadow:0 8px 28px rgba(232,96,60,0.4);}
+.scroll-hint{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  opacity:0.55;animation:bounceY 2.2s ease-in-out infinite;
+}
+.scroll-hint span{font-family:'Montserrat',sans-serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;}
+.scroll-hint svg{width:18px;height:18px;}
+
+/* ── SECTION SHELL ── */
+.section-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--coral);margin-bottom:0.7rem;
+}
+.section-title{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(2.2rem,6vw,3.4rem);
+  color:var(--ink);line-height:1.05;margin-bottom:1.5rem;
+}
+
+/* ── ABOUT ── */
+.about{background:var(--cream);padding:6rem 5vw;}
+.about-inner{
+  max-width:1080px;margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:3.5rem;
+  align-items:center;
+}
+.about-img-wrap{
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 24px 64px rgba(0,0,0,0.13);
+  max-height:600px;
+}
+.about-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.about-text p{
+  font-size:1rem;line-height:1.78;
+  color:var(--ink-mid);margin-bottom:1.1rem;
+}
+.about-text p strong{color:var(--ink);}
+.about-stats{
+  display:flex;gap:2.5rem;margin-top:2rem;
+  flex-wrap:wrap;
+}
+.stat-num{
+  font-family:'Dancing Script',cursive;
+  font-size:3rem;color:var(--pink);line-height:1;
+}
+.stat-lbl{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--ink-soft);margin-top:0.2rem;
+}
+
+/* ── SERVICES ── */
+.services{
+  background:linear-gradient(180deg,#FCE4EC 0%,#FADADD 100%);
+  padding:6rem 5vw;
+}
+.services-inner{max-width:1080px;margin:0 auto;}
+
+/* Tab controls */
+.tabs{display:flex;gap:0.6rem;margin-bottom:2.6rem;flex-wrap:wrap;}
+.tab-btn{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.72rem 1.5rem;border-radius:999px;
+  border:2.5px solid var(--pink);
+  background:transparent;color:var(--pink);
+  cursor:pointer;transition:all .2s;
+}
+.tab-btn.active{background:var(--pink);color:white;}
+.tab-pane{display:none;}
+.tab-pane.active{display:block;}
+
+/* Price cards */
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1.1rem;
+}
+.price-card{
+  background:var(--pink-card);
+  border-radius:22px;padding:1.9rem 1.7rem;
+  color:white;position:relative;overflow:hidden;
+}
+.price-card::after{
+  content:"";position:absolute;top:-40px;right:-40px;
+  width:110px;height:110px;border-radius:50%;
+  background:rgba(255,255,255,0.07);
+}
+.price-card-top{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:0.8rem;
+  margin-bottom:1.3rem;
+}
+.price-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.85rem;font-weight:800;
+  letter-spacing:0.14em;text-transform:uppercase;
+  line-height:1.4;
+}
+.badge{
+  background:var(--coral);border-radius:12px;
+  padding:0.55rem 0.9rem;text-align:right;flex-shrink:0;
+}
+.badge .amt{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.6rem;font-weight:800;color:white;line-height:1;
+}
+.badge .per{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;font-weight:600;
+  color:rgba(255,255,255,0.85);text-transform:uppercase;
+}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+.price-features li{
+  display:flex;align-items:flex-start;gap:0.6rem;
+  font-size:0.9rem;line-height:1.45;color:rgba(255,255,255,0.92);
+}
+.price-features li::before{content:"✓";font-weight:800;color:white;flex-shrink:0;margin-top:0.05em;}
+
+/* Combo card */
+.combo-card{
+  background:var(--coral);border-radius:22px;
+  padding:1.9rem 1.7rem;color:white;margin-top:1.1rem;
+}
+.combo-card .combo-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.combo-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.85rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;
+}
+.combo-extra{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);margin-bottom:0.3rem;
+}
+
+/* ── VIDEO ── */
+.video-section{background:var(--ink);padding:5.5rem 5vw;}
+.video-inner{max-width:500px;margin:0 auto;text-align:center;}
+.video-inner .section-label{color:var(--peach);}
+.video-inner .section-title{color:white;}
+.video-wrap{
+  margin-top:2.5rem;border-radius:22px;overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.55);
+}
+.video-wrap video{width:100%;display:block;}
+
+/* ── RESULTS ── */
+.results{background:var(--cream);padding:6rem 5vw;}
+.results-inner{max-width:1080px;margin:0 auto;}
+.ba-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0.9rem;
+}
+.ba-card{
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,0.1);
+  aspect-ratio:1/1;
+  transition:transform .3s,box-shadow .3s;
+  cursor:pointer;
+}
+.ba-card:hover{transform:scale(1.025);box-shadow:0 16px 40px rgba(0,0,0,0.18);}
+.ba-card img{width:100%;height:100%;object-fit:cover;}
+
+/* Testimonials */
+.testi-placeholder{
+  background:#F5F0EB;border-radius:20px;
+  padding:3rem;text-align:center;
+  border:2.5px dashed rgba(238,91,140,0.25);
+}
+.testi-stars{font-size:1.4rem;margin-bottom:1rem;letter-spacing:4px;}
+.testi-placeholder p{color:var(--ink-soft);font-size:0.95rem;line-height:1.6;}
+
+/* ── CONTACT ── */
+.contact{
+  background:linear-gradient(170deg,var(--sky) 0%,var(--peach) 60%,var(--warm) 100%);
+  padding:6rem 5vw;text-align:center;
+}
+.contact-inner{max-width:640px;margin:0 auto;}
+.contact-sub{color:rgba(30,30,30,0.72);font-size:1rem;line-height:1.6;max-width:38ch;margin:0 auto;}
+.contact-items{
+  display:flex;flex-direction:column;gap:1rem;
+  margin-top:2.8rem;align-items:center;
+}
+.contact-item{
+  display:flex;align-items:center;gap:0.9rem;
+  background:rgba(255,255,255,0.68);
+  border-radius:18px;padding:1.1rem 1.6rem;
+  width:100%;max-width:420px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.85rem;font-weight:600;color:var(--ink);
+  transition:background .2s,transform .2s;
+  backdrop-filter:blur(4px);
+}
+.contact-item:hover{background:rgba(255,255,255,0.9);transform:translateY(-2px);}
+.contact-icon{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.form-box{
+  margin-top:3rem;
+  background:rgba(255,255,255,0.68);
+  border-radius:22px;padding:2.8rem 2rem;
+  backdrop-filter:blur(4px);
+}
+.form-box h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:1rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:0.6rem;
+}
+.form-box p{color:var(--ink-mid);font-size:0.92rem;line-height:1.6;}
+.form-box .btn{margin-top:1.5rem;}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);
+  padding:2.8rem 5vw;
+  display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+  text-align:center;
+}
+.footer-by{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);margin-bottom:0.3rem;
+}
+.footer-oas a{display:block;}
+.footer-oas img{height:42px;width:auto;opacity:0.82;transition:opacity .2s;}
+.footer-oas img:hover{opacity:1;}
+.footer-copy{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;color:rgba(255,255,255,0.28);
+}
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes bounceY{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(7px);}
+}
+
+/* ── RESPONSIVE ── */
+@media(min-width:780px){
+  .about-inner{grid-template-columns:1fr 1.3fr;}
+  .about-img-wrap{max-height:560px;}
+  .ba-grid{grid-template-columns:repeat(4,1fr);}
+  .contact-items{flex-direction:row;flex-wrap:wrap;justify-content:center;}
+  .contact-item{max-width:300px;}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta-wrap{display:none;}
+  .hamburger{display:block;}
+  .nav-links.open{
+    display:flex;flex-direction:column;
+    position:fixed;top:68px;left:0;right:0;
+    background:var(--cream);
+    padding:1.5rem 5vw 2rem;gap:1.4rem;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  }
+  .nav-links.open a{font-size:1rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none!important;transition:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-logo">
+    <a href="#home"><img src="images/logo.jpg" alt="Charlotte Hird Fitness"></a>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services & Pricing</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta-wrap">
+    <a class="nav-cta" href="#contact">Get Started</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="home">
+  <img class="hero-logo" src="images/logo.jpg" alt="Charlotte Hird Fitness">
+  <div class="hero-eyebrow">OneGym Bishop Auckland &amp; Online</div>
+  <h1>Train with<br>Charlotte</h1>
+  <p class="hero-sub">7 years helping women build strength, confidence, and healthier lifestyles — in person and online.</p>
+  <div class="hero-btns">
+    <a class="btn btn-pink" href="#services">View Packages</a>
+    <a class="btn btn-outline" href="#contact">Get in Touch</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <path d="M10 4v12M4 10l6 6 6-6"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="images/charlotte-about.jpg" alt="Charlotte Hird - Personal Trainer">
+    </div>
+    <div class="about-text">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Hi, I'm Charlotte</h2>
+      <p>I'm a personal trainer and online coach with over <strong>7 years of experience</strong> helping women build strength, confidence, and healthier lifestyles. My passion isn't just about helping clients change how they look — it's about helping them feel stronger, more confident, and capable both inside and outside the gym.</p>
+      <p>I know that life can be busy, which is why I believe fitness should fit around your lifestyle, not take it over. My coaching is built around creating <strong>flexible, realistic plans</strong> that are easy to stick to, without restrictive diets or endless hours of cardio. I want you to enjoy the process while achieving results that last.</p>
+      <p>Whether you're completely new to the gym, looking to lose body fat, build muscle, or simply feel more confident in yourself, I'll <strong>support you every step of the way</strong> with personalised training, accountability, and encouragement.</p>
+      <p>The most rewarding part of my job is watching women <strong>grow in confidence</strong>, celebrate achievements they never thought possible, and realise they're capable of so much more than they ever imagined. If you're ready to become stronger, healthier, and more confident — I'd love to help you get there.</p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">7+</div>
+          <div class="stat-lbl">Years PT</div>
+        </div>
+        <div>
+          <div class="stat-num">3+</div>
+          <div class="stat-lbl">Years Online</div>
+        </div>
+        <div>
+          <div class="stat-num">30+</div>
+          <div class="stat-lbl">Active Clients</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="section-label">Work With Me</div>
+    <h2 class="section-title">Packages &amp; Pricing</h2>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="svcTab('pt',this)">Personal Training</button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="svcTab('coaching',this)">Online Coaching</button>
+    </div>
+
+    <!-- PT -->
+    <div class="tab-pane active" id="tab-pt">
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Personal<br>Training 1:1</h3>
+            <div class="badge"><div class="amt">£30</div><div class="per">per session</div></div>
+          </div>
+          <ul class="price-features">
+            <li>1 hour session tailored to your goal</li>
+            <li>Workout plan to follow alongside</li>
+            <li>Nutritional guidance</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Personal<br>Training 2:1</h3>
+            <div class="badge"><div class="amt">£40</div><div class="per">per session</div></div>
+          </div>
+          <ul class="price-features">
+            <li>Same as the 1:1</li>
+            <li>Clients must have similar goals</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Personal<br>Training 3:1</h3>
+            <div class="badge"><div class="amt">£50</div><div class="per">per session</div></div>
+          </div>
+          <ul class="price-features">
+            <li>Same as above</li>
+            <li>Clients must have similar goals</li>
+          </ul>
+        </div>
+      </div>
+      <div class="combo-card">
+        <div class="combo-top">
+          <div>
+            <div class="combo-extra">Add-on</div>
+            <h3>Combined PT &amp; Coaching</h3>
+          </div>
+          <div class="badge" style="background:rgba(0,0,0,0.22);">
+            <div class="amt">£30</div><div class="per">per month extra</div>
+          </div>
+        </div>
+        <ul class="price-features">
+          <li>Add Bronze coaching to your PT sessions for increased accountability</li>
+          <li>Must be having at least one PT session per week</li>
+          <li>Price is per person</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Online Coaching -->
+    <div class="tab-pane" id="tab-coaching">
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Basic<br>Package</h3>
+            <div class="badge"><div class="amt">£30</div><div class="per">per month</div></div>
+          </div>
+          <ul class="price-features">
+            <li>Tailored workout plan with videos and descriptions</li>
+            <li>Daily targets</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Bronze</h3>
+            <div class="badge"><div class="amt">£59</div><div class="per">per month</div></div>
+          </div>
+          <ul class="price-features">
+            <li>4 week training plan tailored to you and your goal with daily targets</li>
+            <li>Messaging support throughout the week plus support group and additional resources</li>
+            <li>Nutritional guidance</li>
+            <li>One full monthly check-in to review progress (photos, measurements etc)</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Silver</h3>
+            <div class="badge"><div class="amt">£99</div><div class="per">per month</div></div>
+          </div>
+          <ul class="price-features">
+            <li>Everything in Bronze with more accountability</li>
+            <li>Full check-in every 2 weeks to review progress</li>
+            <li>Daily messages</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <div class="price-card-top">
+            <h3>Gold</h3>
+            <div class="badge"><div class="amt">£149</div><div class="per">per month</div></div>
+          </div>
+          <ul class="price-features">
+            <li>Everything in Bronze with 24/7 support</li>
+            <li>Weekly full check-in to review progress</li>
+            <li>Daily messages</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VIDEO ═══ -->
+<section class="video-section" id="video">
+  <div class="video-inner">
+    <div class="section-label">See Me Train</div>
+    <h2 class="section-title" style="color:white;">In Action</h2>
+    <div class="video-wrap">
+      <video autoplay muted loop playsinline>
+        <source src="video/training.mp4" type="video/mp4">
+        Your browser doesn't support video.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESULTS ═══ -->
+<section class="results" id="results">
+  <div class="results-inner">
+    <div class="section-label">Client Results</div>
+    <h2 class="section-title">Real Transformations</h2>
+
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" role="tab" onclick="resTab('ba',this)">Before &amp; Afters</button>
+      <button class="tab-btn" role="tab" onclick="resTab('testi',this)">Testimonials</button>
+    </div>
+
+    <div class="tab-pane active" id="tab-ba">
+      <div class="ba-grid">
+        <div class="ba-card"><img src="images/ba1.jpg" alt="Client transformation" loading="lazy"></div>
+        <div class="ba-card"><img src="images/ba2.jpg" alt="Client transformation" loading="lazy"></div>
+        <div class="ba-card"><img src="images/ba3.jpg" alt="Client transformation" loading="lazy"></div>
+        <div class="ba-card"><img src="images/ba4.jpg" alt="Client transformation" loading="lazy"></div>
+        <div class="ba-card"><img src="images/ba5.jpg" alt="Client transformation" loading="lazy"></div>
+        <div class="ba-card"><img src="images/ba6.jpg" alt="Client transformation" loading="lazy"></div>
+        <div class="ba-card"><img src="images/ba7.jpg" alt="Client transformation" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-testi">
+      <div class="testi-placeholder">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p>Client testimonials coming soon.<br>Results speak for themselves — check the before &amp; afters!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Get Started</div>
+    <h2 class="section-title">Let's build your plan</h2>
+    <p class="contact-sub">Ready to start your journey? Drop Charlotte a message and let's talk about your goals.</p>
+
+    <div class="contact-items">
+      <a class="contact-item" href="mailto:Charlottehirdpt@gmail.com">
+        <div class="contact-icon" style="background:rgba(232,96,60,0.15);">📧</div>
+        <span>Charlottehirdpt@gmail.com</span>
+      </a>
+      <a class="contact-item" href="https://instagram.com/charlottehirdfitness" target="_blank" rel="noopener">
+        <div class="contact-icon" style="background:rgba(238,91,140,0.15);">📸</div>
+        <span>@charlottehirdfitness</span>
+      </a>
+      <a class="contact-item" href="https://www.onegymfitness.com/locations/bishop-auckland/" target="_blank" rel="noopener">
+        <div class="contact-icon" style="background:rgba(137,200,220,0.2);">📍</div>
+        <span>OneGym Bishop Auckland</span>
+      </a>
+    </div>
+
+    <div class="form-box">
+      <h3>Send an Enquiry</h3>
+      <p>Enquiry form coming soon. In the meantime, drop Charlotte a message on Instagram or send her an email directly — she'll get back to you quickly.</p>
+      <a class="btn btn-pink" href="mailto:Charlottehirdpt@gmail.com">Email Charlotte</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-oas">
+    <div class="footer-by">Website by</div>
+    <a href="https://instagram.com/onyx.asset.studio" target="_blank" rel="noopener">
+      <img src="images/oas-logo.png" alt="Onyx Asset Studio">
+    </a>
+  </div>
+  <p class="footer-copy">© 2026 Charlotte Hird Fitness. All rights reserved.</p>
+</footer>
+
+<script>
+// Hamburger
+const ham = document.getElementById('hamburger');
+const nav = document.getElementById('navLinks');
+ham.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  ham.setAttribute('aria-expanded', open);
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+// Services tabs
+function svcTab(id, btn) {
+  document.querySelectorAll('#services .tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#services .tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+}
+
+// Results tabs
+function resTab(id, btn) {
+  document.querySelectorAll('#results .tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#results .tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+}
+
+// Subtle scroll nav shadow
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+});
+</script>
+</body>
+</html>
